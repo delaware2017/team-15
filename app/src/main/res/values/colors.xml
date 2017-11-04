@@ -6,4 +6,5 @@
     <color name="primaryGreen">#e2ffd6</color>
     <color name="secondaryGreen">#4f8932</color>
     <color name="primaryText">#172610</color>
+    <color name="buttonPressed">#1f4c21</color>
 </resources>

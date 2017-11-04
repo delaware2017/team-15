@@ -8,6 +8,10 @@ import java.text.NumberFormat;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Author: Connor Price & Kevin Bradshaw
+ * Date: 11/4/2017
+ */
 public class Balance extends MenuData
 {
     // instance variable for the patient's balance
@@ -19,8 +23,9 @@ public class Balance extends MenuData
     {
         this.context = context;
         this.activity = activity;
-
     }
+
+
 
     // create a new NumberFormat with standard currency settings
     private String formatAsCurrency(double number){

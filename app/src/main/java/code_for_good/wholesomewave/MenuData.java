@@ -4,6 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
+/**
+ * Author: Connor Price & Kevin Bradshaw
+ * Date: 11/4/2017
+ */
+
 public class MenuData {
     // object instantiations
     public Activity activity;

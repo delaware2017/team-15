@@ -8,6 +8,11 @@ import android.widget.TextView;
 
 import android.support.v7.widget.Toolbar;
 
+/**
+ * Author: Connor Price & Kevin Bradshaw
+ * Date: 11/4/2017
+ */
+
 public class AccountInfo extends MenuData
 {
     // instance variable for the patient's balance

@@ -6,6 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * Author: Connor Price & Kevin Bradshaw
+ * Date: 11/4/2017
+ */
+
 public class LoginMenu extends MenuData
 {
     // instance variables

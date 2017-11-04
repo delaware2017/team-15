@@ -14,4 +14,8 @@
     <string name="fruit_basket_title">Fruit Basket</string>
     <string name="redemption_title">Redemption Code</string>
     <string name="exit_app">Exit App</string>
+    <string name="event_info_1">By participating in these events, you can earn credit towards your account balance:</string>
+    <string name="main_menu_button_text">Main Menu</string>
+    <string name="event_info_2">* Visiting a physician\n\n* Attending a nutrition class\n\n* Completing an online nutrition education course</string>
+    <string name="update_balance_button_text">Update Balance</string>
 </resources>

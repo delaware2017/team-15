@@ -2,5 +2,5 @@ package code_for_good.wholesomewave;
 
 
 
-public class LoginMenu {
+public class LoginMenu extends MenuData{
 }

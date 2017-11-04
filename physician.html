@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
+<?php
+
+	$db = mysqli_connect('10.88.22.106','team15','team15Waves','wholesomewave')
+
+	 or die('Error connecting to MySQL server.');
+
+?>
 <html lang="en">
    <head>
    <title>Wholesome Wave</title>
@@ -11,20 +19,37 @@
     <script src="modernizr.custom.40753.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles.css">
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="icon" sizes="192x192" href="images/android.png">
+	
 	</head>
 	<body>
 	<div class="container">
-         <p class="skipnavigation"><a href="#contentstart">Skip navigation</a></p> 
          <header>
 		 <h1>Wholesome Wave</h1>
 		 </header>
 		 <nav class="sitenavigation">
-			<p><a href="index.html">Index</a></p>
+			<p><a href="index.html">Home</a></p>
 			<p><a href="enrollment.html">Patient Information</a></p>
 		 </nav>
-         <h2>Physician</h2>		 
+         <h2>Provider</h2>
+
+	Name: <?php echo $_POST["1stname"] . " " . $_POST["lastname"]; ?><br>
+
+
+
+		<?php
+
+		$query = "SELECT * FROM providers";
+		mysqli_query($db, $query) or die('Error querying database.');
+
+
+	$result = mysqli_query($db, $query);
+
+	$row = mysqli_fetch_array($result);
+
+	while ($row = mysqli_fetch_array($result)) {
+	 echo $row['PROVIDER_NUM'] . " " . $row['PASSCODE'] . ": " . $row['NAME'] . " " . $row['TYPE'] ."<br />";
+
+	}		
+        ?>	
 	</div>
 	</body>

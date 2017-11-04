@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primaryGreen"
+    android:textColor="@color/primaryText">
 
     <TextView
         android:id="@+id/tv_main_menu"
@@ -23,6 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/update_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_main_menu_balance" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/to_account_info_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -65,6 +69,7 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/event_menu_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -79,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/to_account_info_button" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button"
         android:id="@+id/to_redemption_menu"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

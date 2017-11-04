@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryGreen"
-    android:textColorLink="@color/primaryText">
+    android:textColor="@color/primaryText">
 
     <TextView
         android:id="@+id/welcome_message"
@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="0.24000001" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button"
         android:id="@+id/title_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

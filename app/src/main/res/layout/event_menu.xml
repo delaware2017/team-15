@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primaryGreen"
+    android:textColor="@color/primaryText">
 
     <TextView
         android:id="@+id/tvEventInfo"
@@ -35,6 +37,7 @@
         app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/mainMenuButton"
         android:onClick="toMainMenu"
         android:layout_width="wrap_content"

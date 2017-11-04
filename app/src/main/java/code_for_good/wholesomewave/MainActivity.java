@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
             switch (button.getId()) {
                 case R.id.btUpdateBalance:
                     // update the balance with a test value
-                    accountInfo = new AccountInfo(context, activity);
-                    accountInfo.calculateAndDisplayBalance(3);
+                    Balance balance = new Balance(context, activity);
+                    balance.calculateBalance(3);
                     break;
             }
         } catch (Exception e){

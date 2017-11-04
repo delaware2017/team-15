@@ -36,13 +36,6 @@ public class AccountInfo extends MenuData
         // set balance to zero
         //FUTURE GET FROM DB
         balance = 0;
-
-        updateBalance.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                System.out.println("Button clicked!");
-                calculateAndDisplayBalance(3.0);
-            }
-        });
     }
 
     // initializes Android widgets
@@ -53,21 +46,5 @@ public class AccountInfo extends MenuData
         balanceText = (TextView)activity.findViewById(R.id.tvBalance);
         updateBalance = (Button) activity.findViewById(R.id.btUpdateBalance);
         mainMenuButton = (Button)activity.findViewById(R.id.btMainMenu);
-    }
-
-
-    // method updates the patient's balance
-    public void calculateAndDisplayBalance(double amount)
-    {
-        // create a NumberFormat object with standard currency formatting
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        currency.setMinimumFractionDigits(2);
-        currency.setMaximumFractionDigits(2);
-
-        // add the passed amount (even negative) to the account balance
-        balance += amount;
-
-        String newText = activity.getString(R.string.balance) + " " + currency.format(balance);
-        balanceText.setText(newText);
     }
 }

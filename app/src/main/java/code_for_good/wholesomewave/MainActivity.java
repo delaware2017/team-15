@@ -27,21 +27,6 @@ public class MainActivity extends AppCompatActivity {
         activity = MainActivity.this;
     }
 
-    protected void accountButtonsEvents(View button)
-    {
-        updateContexts();
-        try {
-            switch (button.getId()) {
-                case R.id.btUpdateBalance:
-                    // update the balance with a test value
-                    Balance balance = new Balance(context, activity);
-                    balance.calculateBalance(3);
-                    break;
-            }
-        } catch (Exception e){
-            System.out.println(e.getStackTrace() + "\n" + e.getMessage());
-        }
-    }
     protected void verifyLogin(View button) {
 
         /*valid = new LoginValidator();

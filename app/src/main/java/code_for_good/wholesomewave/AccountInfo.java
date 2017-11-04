@@ -3,13 +3,10 @@ package code_for_good.wholesomewave;
 import android.app.Activity;
 import android.content.Context;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import android.support.v7.widget.Toolbar;
-
-import java.text.NumberFormat;
 
 public class AccountInfo extends MenuData
 {
@@ -44,7 +41,6 @@ public class AccountInfo extends MenuData
         accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
         accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
         balanceText = (TextView)activity.findViewById(R.id.tvBalance);
-        updateBalance = (Button) activity.findViewById(R.id.btUpdateBalance);
         mainMenuButton = (Button)activity.findViewById(R.id.btMainMenu);
     }
 }

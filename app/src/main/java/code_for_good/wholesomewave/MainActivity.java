@@ -11,6 +11,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Author: Connor Price & Kevin Bradshaw
+ * Date: 11/4/2017
+ */
+
 public class MainActivity extends AppCompatActivity
 {
     // import Context and Activity objects

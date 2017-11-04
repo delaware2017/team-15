@@ -16,8 +16,7 @@ public class Balance extends MenuData
 {
     // instance variable for the patient's balance
     public static double balance = 30;
-    public static TextView mainMenuBalance;
-    public static TextView accountInfoBalance;
+
 
     // constructor that accepts a context and activity
     public Balance(Context context, Activity activity)
@@ -26,13 +25,8 @@ public class Balance extends MenuData
         this.activity = activity;
     }
 
-    private void setViews(){
-        mainMenuBalance = (TextView) activity.findViewById(R.id.tv_main_menu_balance);
-        accountInfoBalance = (TextView) activity.findViewById(R.id.tv_account_info_balance);
 
-        mainMenuBalance.setText(formatAsCurrency(balance));
-        accountInfoBalance.setText(formatAsCurrency(balance));
-    }
+
     // create a new NumberFormat with standard currency settings
     private String formatAsCurrency(double number){
         NumberFormat currency = NumberFormat.getCurrencyInstance();
@@ -50,12 +44,11 @@ public class Balance extends MenuData
     }
 
     // method updates the patient's balance
-    public void calculateBalanceAndUpdateViews(double amount)
+    public void calculateBalance(double amount)
     {
         // add the passed amount (even negative) to the account balance,
         //and update textViews
         balance += amount;
-        setViews();
 
         // FUTURE: UPDATE THE DATABASE WITH THE NEW BALANCE
 
@@ -64,8 +57,6 @@ public class Balance extends MenuData
             toast(formatAsCurrency(Math.abs(amount)) + " has been deducted from your account!");
         else
             toast(formatAsCurrency(amount) + " has been added to your account!");
-
-
 
         // TODO: ADD PURCHASE TO THE DATABASE
     }

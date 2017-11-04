@@ -11,10 +11,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+import java.text.NumberFormat;
+
 /**
  * Author: Connor Price & Kevin Bradshaw
  * Date: 11/4/2017
  */
+
 
 public class MainActivity extends AppCompatActivity
 {
@@ -25,10 +29,15 @@ public class MainActivity extends AppCompatActivity
     // import more objects
     AccountInfo accountInfo;
     LoginMenu loginMenu;
+    Balance balance;
     Button titleButton;
     TextView titleMessage;
-    TextView tvMainMenuBalance;
-    Balance balance;
+    TextView mainMenuBalance;
+    TextView accountInfoBalance;
+    String balanceString;
+
+
+
 
     // onCreate
     @Override
@@ -81,6 +90,7 @@ public class MainActivity extends AppCompatActivity
                 // when the account info button is pressed, switch to the account info page
                 case R.id.to_account_info_button:
                     setContentView(R.layout.account_info);
+                    updateAccountInfoBalance();
                     updateContexts();
                     accountInfo = new AccountInfo(context, activity);
                     break;
@@ -91,13 +101,6 @@ public class MainActivity extends AppCompatActivity
                 // when the qr button is pressed, the app displays a QR code to scan at the register
                 case R.id.qr_button:
                     setContentView(R.layout.qr_screen);
-                    break;
-                // when the back button is pressed, the program leaves the QR screen and returns to the main menu
-                case R.id.btBack:
-                    setContentView(R.layout.activity_main);
-                    updateContexts();
-                    Balance balance = new Balance(context, activity);
-                    balance.calculateBalanceAndUpdateViews(-5);
                     break;
                 // when the purchases button is pressed, the app switches to the purchase history view
                 case R.id.btPurchases:
@@ -120,8 +123,44 @@ public class MainActivity extends AppCompatActivity
     // method displays the main menu
     protected void toMainMenu(View button)
     {
-        updateContexts();
+        if(button.getId() == R.id.btBack) {
+            updateContexts();
+            balance = new Balance(context, activity);
+            balance.calculateBalance(-5);
+        }
         setContentView(R.layout.activity_main);
+        updateContexts();
+        balance = new Balance(context, activity);
+        updateMainMenuBalance();
+
+
+
+
+    }
+
+    protected void updateMainMenuBalance(){
+        updateContexts();
+        mainMenuBalance = (TextView) activity.findViewById(R.id.tv_balance_main_menu);
+        balance = new Balance(context, activity);
+        balanceString = formatAsCurrency(balance.getBalance());
+        mainMenuBalance.setText(balanceString);
+    }
+
+    protected void updateAccountInfoBalance(){
+        updateContexts();
+        accountInfoBalance = (TextView) activity.findViewById(R.id.tv_user_balance);
+        balance = new Balance(context, activity);
+        balanceString = formatAsCurrency(balance.getBalance());
+        accountInfoBalance.setText(balanceString);
+    }
+
+    private String formatAsCurrency(double number){
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        currency.setMaximumFractionDigits(2);
+        currency.setMinimumIntegerDigits(2);
+
+        return currency.format(number);
+
     }
 
 }

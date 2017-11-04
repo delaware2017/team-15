@@ -1,14 +1,15 @@
 package code_for_good.wholesomewave;
 
-
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class LoginMenu extends MenuData{
     private EditText username;
     private EditText password;
+    private Button verify;
 
 
     public LoginMenu(Context context, Activity activity){
@@ -18,13 +19,20 @@ public class LoginMenu extends MenuData{
         collectUserData();
         setUserData();
 
+        verify = (Button) activity.findViewById(R.id.login_button);
 
+        verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validateUserCredentials();
+            }
+        });
     }
 
     private void validateUserCredentials() {
         valid = new LoginValidator(context, super.username, super.password);
         if (valid.isTrue()) {
-
+            activity.setContentView(R.layout.activity_main);
         }
     }
 
@@ -36,7 +44,6 @@ public class LoginMenu extends MenuData{
         super.username = getStringFromEditText(username);
         super.password = getStringFromEditText(password);
     }
-
 
     private String getStringFromEditText(EditText editText){
         return editText.getText().toString();

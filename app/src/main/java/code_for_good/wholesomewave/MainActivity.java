@@ -32,12 +32,6 @@ public class MainActivity extends AppCompatActivity
         activity = MainActivity.this;
     }
 
-    protected void verifyLogin(View button) {
-        /*valid = new LoginValidator();
-        if (valid.isTrue()) {
-            setContentView()
-        }*/
-    }
     protected void changeMenu(View button){
         try
         {
@@ -116,4 +110,5 @@ public class MainActivity extends AppCompatActivity
         updateContexts();
         setContentView(R.layout.activity_main);
     }
+
 }

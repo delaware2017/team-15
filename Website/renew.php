@@ -40,7 +40,6 @@
 		$row = $result->fetch_assoc();
 		
 		$addBalance = ($row["FAMILY_SIZE"] * $term) + $row["BALANCE"];
-		echo $addBalance;
 		
 		$query = "update PATIENTS 
 				set BALANCE = '$addBalance'

@@ -35,15 +35,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // method is triggered by clicking on the updateBalanceButton
-    protected void updateButtonEvent(View button)
+    protected void accountButtonsEvents(View button)
     {
-        switch(button.getId())
-        {
-            case R.id.btUpdateBalance:
-                // update the balance with a test value
-                AccountInfo accountInfo = new AccountInfo(context, activity);
-                accountInfo.updateBalance(3);
-                break;
+        try {
+            switch (button.getId()) {
+                case R.id.btUpdateBalance:
+                    // update the balance with a test value
+                    AccountInfo accountInfo = new AccountInfo(context, activity);
+                    accountInfo.updateBalance(3);
+                    break;
+            }
+        } catch (Exception e){
+            System.out.println(e.getStackTrace() + "\n" + e.getMessage());
         }
     }
     protected void verifyLogin(View button) {
@@ -55,10 +58,11 @@ public class MainActivity extends AppCompatActivity {
     }
     protected void changeMenu(View button){
         try {
-            updateContexts();
+
             switch (button.getId()) {
                 case R.id.to_account_info_button:
                     setContentView(R.layout.account_info);
+                    updateContexts();
                     accountInfo = new AccountInfo(context, activity);
                     break;
                 case R.id.to_fruit_basket_button: /*setContentView(R.layout.fruit_basket);*/
@@ -67,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
             }
+
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

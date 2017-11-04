@@ -16,16 +16,25 @@ public class LoginMenu extends MenuData{
         this.activity = activity;
 
         collectUserData();
+        setUserData();
+
 
     }
 
     private void validateUserCredentials() {
-        valid = new LoginValidator(context);
+        valid = new LoginValidator(context, super.username, super.password);
+        if (valid.isTrue()) {
+
+        }
     }
 
     private void collectUserData(){
         username = (EditText) activity.findViewById(R.id.et_login_username);
         password = (EditText) activity.findViewById(R.id.et_login_password);
+    }
+    private void setUserData(){
+        super.username = getStringFromEditText(username);
+        super.password = getStringFromEditText(password);
     }
 
 

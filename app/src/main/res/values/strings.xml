@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Wholesome Wave</string>
-
+    <string name="title_welcome">Welcome to the\nWholesome Wave App!</string>
+    <string name="title_button">Proceed</string>
     <string name="login_welcome">Please input your\n credentials below:</string>
     <string name="login_username">Username:</string>
     <string name="login_password">Password:</string>

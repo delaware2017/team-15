@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.title_screen);
 
         updateContexts();
     }
@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity
         activity = MainActivity.this;
     }
 
-    protected void verifyLogin(View button)
-    {
-
+    protected void verifyLogin(View button) {
         /*valid = new LoginValidator();
         if (valid.isTrue()) {
             setContentView()
@@ -48,6 +46,9 @@ public class MainActivity extends AppCompatActivity
             updateContexts();
             switch (button.getId())
             {
+                case R.id.title_button:
+                    setContentView(R.layout.activity_main);
+                    break;
                 case R.id.to_account_info_button:
                     setContentView(R.layout.account_info);
                     updateContexts();
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity
                 case R.id.to_redemption_menu:
                     break;
             }
-
         }
         catch (Exception e)
         {

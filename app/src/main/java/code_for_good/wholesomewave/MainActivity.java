@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
-
 public class MainActivity extends AppCompatActivity
 {
     Context context;
@@ -66,8 +65,11 @@ public class MainActivity extends AppCompatActivity
                     updateContexts();
 
                     Balance balance = new Balance(context, activity);
-                    balance.calculateBalance(-5);
+                    balance.calculateBalance(5);
                     break;
+                case R.id.btPurchases:
+                    setContentView(R.layout.qr_screen);
+                    updateContexts();
             }
         }
         catch (Exception e)

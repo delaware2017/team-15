@@ -93,4 +93,16 @@
         android:textSize="30sp"
         android:textColor="@color/primaryText" />
 
+    <Button
+        android:id="@+id/btPurchases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/view_purchases"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_menu_balance" />
+
 </android.support.constraint.ConstraintLayout>

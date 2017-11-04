@@ -21,7 +21,7 @@ public class AccountInfo extends MenuData
     private TextView accountHolder;
     private TextView balanceText;
     private Button updateBalance;
-    private Button mainMenu;
+    private Button mainMenuButton;
 
     public AccountInfo(Context context, Activity activity)
     {
@@ -52,7 +52,7 @@ public class AccountInfo extends MenuData
         accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
         balanceText = (TextView)activity.findViewById(R.id.tvBalance);
         updateBalance = (Button) activity.findViewById(R.id.btUpdateBalance);
-        mainMenu = (Button)activity.findViewById(R.id.btMainMenu);
+        mainMenuButton = (Button)activity.findViewById(R.id.btMainMenu);
     }
 
 

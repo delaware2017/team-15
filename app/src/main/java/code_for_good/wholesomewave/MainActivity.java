@@ -59,8 +59,10 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case R.id.btPurchases:
                     setContentView(R.layout.purchases);
+                    break;
                 case R.id.btBackPurchases:
                     setContentView(R.layout.activity_main);
+                    break;
             }
             updateContexts();
         }

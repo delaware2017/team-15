@@ -10,9 +10,9 @@ public class DataBaseConnector {
     private static DataBaseConnector instance = new DataBaseConnector();
 
     public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://10.88.22.106:3306/"; //Re-edit when server is complete
-    public static final String USERNAME = "";
-    public static final String PASSWORD = "";
+    public static final String URL = "jdbc:mysql://localhost:3306/testing"; //Re-edit when server is complete
+    public static final String USERNAME = "testUserName";
+    public static final String PASSWORD = "askldfj";
 
 
 

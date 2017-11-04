@@ -67,16 +67,6 @@ public class AccountInfo extends MenuData
         // add the passed amount (even negative) to the account balance
         balance += amount;
 
-        // update the balanceText TextView to display the updated balance
-        // negative values are displayed along with a minus sign
-
-        /*
-        if (balance >= 0)
-            newText = R.string.balance + "$" + balance;
-        else
-            newText = R.string.balance + "-$" + balance;
-        */
-
         String newText = activity.getString(R.string.balance) + " " + currency.format(balance);
         balanceText.setText(newText);
     }

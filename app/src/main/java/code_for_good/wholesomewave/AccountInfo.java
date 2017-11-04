@@ -5,13 +5,13 @@ import android.content.Context;
 
 import android.support.v7.widget.Toolbar;
 
-/**
- * Created by Connor on 11/3/2017.
- */
 
-public class AccountInfo {
+
+public class AccountInfo extends MenuData{
     public AccountInfo(Context context, Activity activity)
     {
+        this.context = context;
+        this.activity = activity;
         Toolbar toolbar = new Toolbar(activity);
         toolbar.setTitle("Account Information");
     }

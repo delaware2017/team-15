@@ -7,8 +7,10 @@
     <string name="account_holder">Account Holder:</string>
     <string name="account_number">Account Number:</string>
     <string name="balance">Balance:</string>
+    <string name="update_balance">Update Balance</string>
     <string name="main_menu">Wholesome Wave\nMain Menu</string>
     <string name="account_info_title">Account Information</string>
     <string name="fruit_basket_title">Fruit Basket</string>
     <string name="redemption_title">Redemption Code</string>
+    <string name="exit_app">Exit App</string>
 </resources>

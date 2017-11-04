@@ -74,7 +74,6 @@ public class AccountInfo extends MenuData
             newText = R.string.balance + "-$" + balance;
         */
 
-        System.out.println("Balance:" + balance);
         newText = String.valueOf(currency.format(balance));
         balanceText.setText(newText);
     }

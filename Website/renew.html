@@ -1,0 +1,56 @@
+
+
+
+<html lang="en">
+   <head>
+   <title>Wholesome Wave</title>
+   <!--
+         Wholesome Wave main web page
+         Filename: enrollment.html
+		 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="modernizr.custom.40753.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+	</head>
+	<body>
+	     <div class="container">
+         <header>
+		 <h1>Wholesome Wave</h1>
+		 </header>
+		 <nav class="sitenavigation">
+			<p><a href="index.html">Home</a></p>
+			<p><a href="account.html">Account Information</a></p>
+		 </nav>
+         <h2>Renew Prescription</h2>		 
+	     </div>
+	     <article>
+		
+	<dl>
+	<form action="renew.php" method="post">
+					
+		<fieldset class="account">
+			<legend>Renew Prescription</legend>
+				  <label for="account">
+						  Account Number
+					<input type="account" name="account" id="account" placeholder="Account">
+				  </label>
+				  <br>
+				  <label for="term">
+						  Time period in days
+					<input type="term" name="term" id="term" placeholder="Days">
+				  </label>
+		</fieldset>
+				<fieldset class="formbuttons">
+				<label for="renewbutton">
+					<input type="submit" id="renew" value="Renew">
+				</label>
+				</fieldset>
+
+	</form>
+
+	</dl>
+		    
+	</body>
+</html>

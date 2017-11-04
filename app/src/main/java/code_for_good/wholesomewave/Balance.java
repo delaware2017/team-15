@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class Balance extends MenuData
 {
     // instance variable for the patient's balance
-    private static double balance = 0;
+    public static double balance;
 
     // constructor that accepts a context and activity
     public Balance(Context context, Activity activity)

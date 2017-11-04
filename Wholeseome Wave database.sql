@@ -1,5 +1,5 @@
 CREATE TABLE `patients` (
-  `ACCOUNT_NUM` int(8) DEFAULT NULL,
+  `ACCOUNT_NUM` int(8) NOT NULL AUTO_INCREMENT,
   `FIRST_NAME` varchar(45),
   `LAST_NAME` varchar(45),
   `STREET` varchar(150),
@@ -7,18 +7,20 @@ CREATE TABLE `patients` (
   `CITY` varchar(45),
   `STATE_CODE` char(2),
   `ZIP_CODE` int(5),
-  `PHONE` varchar(12),
+  `PHONE` varchar(14),
   `EMAIL` varchar(45),
   `FAMILY_SIZE` int,
   `BALANCE` decimal(8,2),
-  `PASSWORD` char(8)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `PASSWORD` char(8),
+  PRIMARY KEY (ACCOUNT_NUM)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `providers` (
-  `PROVIDER_NUM` int(8),
+  `PROVIDER_NUM` int(8) NOT NULL AUTO_INCREMENT,
   `PASSCODE` char(6),
   `NAME` varchar(150),
   `TYPE` varchar(45)
+  PRIMARY KEY (PROVIDER_NUM)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `purchases` (
@@ -26,28 +28,35 @@ CREATE TABLE `purchases` (
   `ACCOUNT_NUM` int(8),
   `DATE` date,
   `AMOUNT` double(8,2)
+  PRIMARY KEY (PURCHASE_NUM)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into PATIENTS
+insert into PATIENTS (FIRST_NAME, LAST_NAME, STREET, APARTMENT, CITY, STATE_CODE, ZIP_CODE,
+PHONE, EMAIL, FAMILY_SIZE, BALANCE, PASSWORD)
 values 
-(50012345, 'Kathryn','Smith','555 Pacific Ave','3A','Long Beach','CA',90805, '
+('Kathryn','Smith','555 Pacific Ave','3A','Long Beach','CA',90805, '
 (530)555-5678','none@juno.com',5,150, 'ygbwM8TY');
-insert into PATIENTS
+insert into PATIENTS (FIRST_NAME, LAST_NAME, STREET, APARTMENT, CITY, STATE_CODE, ZIP_CODE,
+PHONE, EMAIL, FAMILY_SIZE, BALANCE, PASSWORD)
 values 
-(50012346, 'Alan','Rodriguez','908 Freemont St.','','Los Angeles','CA',19810, '
+( 'Alan','Rodriguez','908 Freemont St.','','Los Angeles','CA',19810, '
 (999)444-3333','mine@none.com',7,210, 'Vt3QGv3b');
-insert into PATIENTS
+insert into PATIENTS (FIRST_NAME, LAST_NAME, STREET, APARTMENT, CITY, STATE_CODE, ZIP_CODE,
+PHONE, EMAIL, FAMILY_SIZE, BALANCE, PASSWORD)
 values 
-(50012347, 'Anastasya','Masson','3104 Doctors Drive','','Los Angeles','CA',90017, '310-341-3870','a.masson779@gmail.com',2,60, 'ffZyNSeT');
-insert into PATIENTS
+('Anastasya','Masson','3104 Doctors Drive','','Los Angeles','CA',90017, '310-341-3870','a.masson779@gmail.com',2,60, 'ffZyNSeT');
+insert into PATIENTS (FIRST_NAME, LAST_NAME, STREET, APARTMENT, CITY, STATE_CODE, ZIP_CODE,
+PHONE, EMAIL, FAMILY_SIZE, BALANCE, PASSWORD)
 values 
-(50012348, 'Marilyn','Adkins','3788 Atha Drive','509','Bakersfield','CA',93301, '661-627-9529','marilynadkins@yahoo.com',4,120, 'XaHfXxf5');
-insert into PATIENTS
+('Marilyn','Adkins','3788 Atha Drive','509','Bakersfield','CA',93301, '661-627-9529','marilynadkins@yahoo.com',4,120, 'XaHfXxf5');
+insert into PATIENTS (FIRST_NAME, LAST_NAME, STREET, APARTMENT, CITY, STATE_CODE, ZIP_CODE,
+PHONE, EMAIL, FAMILY_SIZE, BALANCE, PASSWORD)
 values 
-(50012349, 'Josefina','Parsons','4285 Jett Lane','','Burbank','CA',91504, '310-709-6683','mixter999@boo.email',3,90, 'XmJGLAS6');
-insert into PATIENTS
+('Josefina','Parsons','4285 Jett Lane','','Burbank','CA',91504, '310-709-6683','mixter999@boo.email',3,90, 'XmJGLAS6');
+insert into PATIENTS (FIRST_NAME, LAST_NAME, STREET, APARTMENT, CITY, STATE_CODE, ZIP_CODE,
+PHONE, EMAIL, FAMILY_SIZE, BALANCE, PASSWORD)
 values 
-(50012350, 'Levi','Martinez','4849 Center Avenue','','Fresno','CA',93721, '559-451-5619','martinez@fake.com',3,90, 'yDLTp2ad');
+('Levi','Martinez','4849 Center Avenue','','Fresno','CA',93721, '559-451-5619','martinez@fake.com',3,90, 'yDLTp2ad');
 
 insert into PROVIDERS
 values (10012345, 'Sb9874','Dr. Wilkens','Physician');

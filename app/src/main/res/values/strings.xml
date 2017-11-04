@@ -10,7 +10,7 @@
     <string name="account_number">Account Number:\u0020</string>
     <string name="balance">Balance:\u0020</string>
     <string name="update_balance">Update Balance</string>
-    <string name="main_menu">Wholesome Wave\nMain Menu</string>
+    <string name="main_menu">Main Menu</string>
     <string name="account_info_title">Account Information</string>
     <string name="event_menu_title">How to earn credit</string>
     <string name="redemption_title">Create discount code</string>
@@ -19,4 +19,6 @@
     <string name="main_menu_button_text">Main Menu</string>
     <string name="event_info_2">* Visiting a physician\n\n* Attending a nutrition class\n\n* Completing an online nutrition education course</string>
     <string name="update_balance_button_text">Update Balance</string>
+    <string name="back_button_text">Back</string>
+    <string name="view_purchases">View Purchases</string>
 </resources>

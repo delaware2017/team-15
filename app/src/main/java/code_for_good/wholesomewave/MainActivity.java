@@ -50,8 +50,23 @@ public class MainActivity extends AppCompatActivity
                     setContentView(R.layout.event_menu);
                     updateContexts();
                     break;
-                case R.id.to_redemption_menu:
+                case R.id.earning_credit_info:
+                    setContentView(R.layout.qr_screen);
+                    updateContexts();
                     break;
+                case R.id.btBack:
+                    setContentView(R.layout.activity_main);
+                    updateContexts();
+
+                    Balance balance = new Balance(context, activity);
+                    balance.calculateBalance(5);
+                    break;
+                case R.id.btPurchases:
+                    setContentView(R.layout.purchases);
+                    updateContexts();
+                case R.id.btBackPurchases:
+                    setContentView(R.layout.activity_main);
+                    updateContexts();
             }
         }
         catch (Exception e)
@@ -67,8 +82,8 @@ public class MainActivity extends AppCompatActivity
         currency.setMinimumFractionDigits(2);
         currency.setMaximumFractionDigits(2);
 
-        Balance balance = new Balance();
-        balance.calculateBalance(125.73);
+        Balance balance = new Balance(context, activity);
+        balance.calculateBalance(5.89);
 
         tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
 

@@ -15,6 +15,7 @@
         android:text="@string/title_welcome"
         android:textAlignment="center"
         android:textSize="40sp"
+        android:textColor="@color/primaryText"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,6 +27,7 @@
         app:layout_constraintVertical_bias="0.24000001" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/title_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

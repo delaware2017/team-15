@@ -57,7 +57,9 @@ public class MainActivity extends AppCompatActivity
                     setContentView(R.layout.event_menu);
                     updateContexts();
                     break;
-                case R.id.to_redemption_menu:
+                case R.id.earning_credit_info:
+                    setContentView(R.layout.qr_screen);
+                    updateContexts();
                     break;
             }
         }

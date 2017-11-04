@@ -59,22 +59,27 @@ public class MainActivity extends AppCompatActivity
                 case R.id.event_menu_button:
                     setContentView(R.layout.event_menu);
                     break;
+                // when the qr button is pressed, the app displays a QR code to scan at the register
                 case R.id.qr_button:
                     setContentView(R.layout.qr_screen);
                     break;
+                // when the back button is pressed, the program leaves the QR screen and returns to the main menu
                 case R.id.btBack:
                     setContentView(R.layout.activity_main);
                     updateContexts();
                     Balance balance = new Balance(context, activity);
                     balance.calculateBalance(-5);
                     break;
+                // when the purchases button is pressed, the app switches to the purchase history view
                 case R.id.btPurchases:
                     setContentView(R.layout.purchases);
                     break;
+                // when the back-purchases button is pressed, the program leaves the purchases history view
                 case R.id.btBackPurchases:
                     setContentView(R.layout.activity_main);
                     break;
             }
+            // update the context and activity again
             updateContexts();
         }
         catch (Exception e)
@@ -83,6 +88,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // method displays the main menu
     protected void toMainMenu(View button)
     {
         updateContexts();

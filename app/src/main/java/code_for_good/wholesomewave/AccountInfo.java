@@ -21,6 +21,7 @@ public class AccountInfo extends MenuData
 
     public AccountInfo(Context context, Activity activity)
     {
+        // update the context and activity
         this.context = context;
         this.activity = activity;
         setupData();

@@ -17,7 +17,7 @@ public class AccountInfo extends MenuData
     // instantiate TextView objects
     private TextView accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
     private TextView accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
-    private TextView balanceText = (TextView)activity.findViewById(R.id.tvBalance);
+    private TextView balanceText = (TextView)activity.findViewById(R.id.tv_account_balance);
 
     public AccountInfo(Context context, Activity activity)
     {
@@ -55,7 +55,7 @@ public class AccountInfo extends MenuData
             newText = R.string.balance + "-$" + balance;
         */
 
-        newText = R.string.balance + "" + currency.format(balance);
+        newText = String.valueOf(currency.format(balance));
         balanceText.setText(newText);
     }
 }

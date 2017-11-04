@@ -37,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
     // method is triggered by clicking on the updateBalanceButton
     protected void accountButtonsEvents(View button)
     {
+        updateContexts();
         try {
             switch (button.getId()) {
                 case R.id.btUpdateBalance:
                     // update the balance with a test value
-                    AccountInfo accountInfo = new AccountInfo(context, activity);
+                    accountInfo = new AccountInfo(context, activity);
                     accountInfo.updateBalance(3);
                     break;
             }

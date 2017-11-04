@@ -112,7 +112,7 @@
         android:id="@+id/tv_balance_main_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$30.00"
+        android:text=""
         android:textSize="30sp"
         app:layout_constraintLeft_toRightOf="@+id/tv_main_menu_balance"
         android:layout_marginLeft="8dp"

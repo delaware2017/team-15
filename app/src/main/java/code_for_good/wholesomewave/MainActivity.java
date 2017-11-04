@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
                     setContentView(R.layout.activity_main);
                     updateContexts();
                     Balance balance = new Balance(context, activity);
-                    balance.calculateBalance(-5);
+                    balance.calculateBalanceAndUpdateViews(-5);
                     break;
                 // when the purchases button is pressed, the app switches to the purchase history view
                 case R.id.btPurchases:

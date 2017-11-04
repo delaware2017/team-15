@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<?php
+
+$servername = "10.88.22.106";
+$username = "ksmith";
+$password = "he1mdall";
+echo "attempt to connect";
+			//$dbh = new mysqli_connect($servername, $username, $password) or die ("Error connecting to server");
+        ?>
+ 
+			
+<html lang="en">
+   <head>
+   <title>Wholesome Wave</title>
+   <!--
+         Wholesome Wave main web page
+         Filename: enrollment.html
+		 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="modernizr.custom.40753.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+	     <div class="container">
+         <p class="skipnavigation"><a href="#contentstart">Skip navigation</a></p> 
+         <header>
+		 <h1>Wholesome Wave</h1>
+		 </header>
+		 <nav class="sitenavigation">
+			<p><a href="index.html">Index</a></p>
+			<p><a href="physician.html">Physician</a></p>
+		 </nav>
+         <h2>Patient Information</h2>		 
+	     </div>
+	     <article>
+		
+	<dl>
+<?php
+		
+		$query = "SELECT * FROM providers";
+			mysquli_query($dbh, Squery) die ("fail");
+			echo "Host info: " . mysqli_get_host_info($dbh);
+		
+			
+        ?>
+
+	</dl>
+		    
+	</body>

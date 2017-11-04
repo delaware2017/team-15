@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">Wholesome Wave</string>
     <string name="title_welcome">Welcome to the\nWholesome Wave App!</string>
-    <string name="title_button">Proceed</string>
+    <string name="title_button">Continue</string>
     <string name="login_welcome">Please input your\n credentials below:</string>
     <string name="login_username">Username:</string>
     <string name="login_password">Password:</string>
     <string name="login_button">Login</string>
-    <string name="account_holder">Account Holder:</string>
-    <string name="account_number">Account Number:</string>
-    <string name="balance">Balance:</string>
+    <string name="account_holder">Account Holder:\u0020</string>
+    <string name="account_number">Account Number:\u0020</string>
+    <string name="balance">Balance:\u0020</string>
     <string name="update_balance">Update Balance</string>
     <string name="main_menu">Wholesome Wave\nMain Menu</string>
     <string name="account_info_title">Account Information</string>
-    <string name="fruit_basket_title">Fruit Basket</string>
-    <string name="redemption_title">Redemption Code</string>
+    <string name="event_menu_title">How to earn credit</string>
+    <string name="redemption_title">Create discount code</string>
     <string name="exit_app">Exit App</string>
     <string name="event_info_1">By participating in these events, you can earn credit towards your account balance:</string>
     <string name="main_menu_button_text">Main Menu</string>

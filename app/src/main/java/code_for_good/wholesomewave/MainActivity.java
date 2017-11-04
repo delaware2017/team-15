@@ -27,13 +27,6 @@ public class MainActivity extends AppCompatActivity {
         activity = MainActivity.this;
     }
 
-
-    protected void testButton(View button) {
-        /*switch (button.getId()){
-
-        }*/
-    }
-
     protected void accountButtonsEvents(View button)
     {
         updateContexts();

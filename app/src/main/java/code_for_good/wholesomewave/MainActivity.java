@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity
         titleMessage.startAnimation(fadeIn);
     }
 
-
     // changes the view / performs operations based upon which buttons are pressed
     protected void changeMenu(View button){
         try

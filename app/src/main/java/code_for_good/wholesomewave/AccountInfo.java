@@ -2,7 +2,6 @@ package code_for_good.wholesomewave;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.View;
 
 import android.widget.TextView;
 
@@ -10,17 +9,15 @@ import android.support.v7.widget.Toolbar;
 
 import java.text.NumberFormat;
 
-import org.w3c.dom.Text;
-
 public class AccountInfo extends MenuData
 {
     // instance variable for the patient's balance
-    private double balance;
+    private static double balance;
 
     // instantiate TextView objects
-    TextView accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
-    TextView accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
-    TextView balanceText = (TextView)activity.findViewById(R.id.tvBalance);
+    private TextView accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
+    private TextView accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
+    private TextView balanceText = (TextView)activity.findViewById(R.id.tvBalance);
 
     public AccountInfo(Context context, Activity activity)
     {
@@ -32,6 +29,7 @@ public class AccountInfo extends MenuData
         toolbar.setTitle("My Account");
 
         // set balance to zero
+        //FUTURE GET FROM DB
         balance = 0;
     }
 
@@ -57,7 +55,7 @@ public class AccountInfo extends MenuData
             newText = R.string.balance + "-$" + balance;
         */
 
-        newText = R.string.balance + "" + balance;
+        newText = R.string.balance + "" + String.valueOf(balance);
         balanceText.setText(currency.format(newText));
     }
 }

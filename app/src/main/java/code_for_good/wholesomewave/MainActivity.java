@@ -5,6 +5,10 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -14,9 +18,10 @@ public class MainActivity extends AppCompatActivity
     Activity activity;
 
     // import more objects
-    LoginMenu loginMenu;
     AccountInfo accountInfo;
-    TextView tvMainMenuBalance;
+    LoginMenu loginMenu;
+    Button titleButton;
+    TextView titleMessage;
 
     // onCreate
     @Override
@@ -25,7 +30,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.title_screen);
 
-        // update the contexts
+        animateTitleScreen();
         updateContexts();
     }
 
@@ -35,6 +40,21 @@ public class MainActivity extends AppCompatActivity
         context = getApplicationContext();
         activity = MainActivity.this;
     }
+
+
+    //makes elements of title screen fade in and out
+    private void animateTitleScreen(){
+        titleButton = (Button) findViewById(R.id.title_button);
+        titleMessage = (TextView) findViewById(R.id.title_message);
+
+        Animation infiniteFade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.infinite_fade);
+        titleButton.startAnimation(infiniteFade);
+
+        AlphaAnimation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setDuration(3000);
+        titleMessage.startAnimation(fadeIn);
+    }
+
 
     // changes the view / performs operations based upon which buttons are pressed
     protected void changeMenu(View button){
@@ -47,7 +67,9 @@ public class MainActivity extends AppCompatActivity
             {
                 // when the title button ("Continue") is pressed, switch to the main activity
                 case R.id.title_button:
-                    setContentView(R.layout.activity_main);
+                    setContentView(R.layout.user_login);
+                    updateContexts();
+                    loginMenu = new LoginMenu(context, activity);
                     break;
                 // when the account info button is pressed, switch to the account info page
                 case R.id.to_account_info_button:

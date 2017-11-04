@@ -20,17 +20,15 @@ public class LoginValidator implements Validator{
 
     // returns true if checkCredentials returns true
     public boolean isTrue() {
-        checkCredentials();
-
-        //temporarily returns true
-        return true;
+        return checkCredentials();
 
     }
 
     // checks the user's credentials
     private boolean checkCredentials(){
-        return username.equals("") && password.equals(DBpassword);
+        return username.equals("admin") && password.equals("password");
     }
+
 
     // TODO: get database information
     private void getDataBaseInfo(){

@@ -14,22 +14,19 @@ public class LoginMenu extends MenuData
     private Button verify;
 
     // constructor that accepts a context and activity
-    public LoginMenu(Context context, Activity activity)
-    {
+    public LoginMenu(Context context, Activity activity) {
         this.context = context;
         this.activity = activity;
 
-        // collect and set user data
-        collectUserData();
-        setUserData();
 
         // verify the user's data
         verify = (Button) activity.findViewById(R.id.login_button);
-        verify.setOnClickListener(new View.OnClickListener()
-        {
+        verify.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
+                // collect and set user data
+                collectUserData();
+                setUserData();
                 validateUserCredentials();
             }
         });
@@ -37,13 +34,13 @@ public class LoginMenu extends MenuData
 
     // method that validates the credentials
     private void validateUserCredentials()
-    {
-        valid = new LoginValidator(context, super.username, super.password);
-        if (valid.isTrue())
         {
-            activity.setContentView(R.layout.activity_main);
+            valid = new LoginValidator(context, super.username, super.password);
+            if (valid.isTrue())
+                activity.setContentView(R.layout.activity_main);
+            else
+                theToasting("Incorrect login credentials");
         }
-    }
 
     // method that collects user data
     private void collectUserData()

@@ -39,6 +39,8 @@ public class Balance extends MenuData
             toast(currency.format(Math.abs(amount)) + " has been deducted from your account!");
         else
             toast(currency.format(amount) + " has been added to your account!");
+
+        // ADD PURCHASE TO THE DATABASE
     }
 
     public void toast(String message)

@@ -66,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
                     updateContexts();
                     accountInfo = new AccountInfo(context, activity);
                     break;
-                case R.id.to_fruit_basket_button: /*setContentView(R.layout.fruit_basket);*/
+                case R.id.to_fruit_basket_button:
+                    setContentView(R.layout.event_menu);
+                    updateContexts();
                     break;
                 case R.id.to_redemption_menu:
                     break;

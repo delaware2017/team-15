@@ -94,7 +94,9 @@
         android:textColor="@color/primaryText" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/btPurchases"
+        android:onClick="changeMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"

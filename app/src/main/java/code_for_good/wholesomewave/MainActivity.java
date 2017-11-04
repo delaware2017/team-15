@@ -68,7 +68,10 @@ public class MainActivity extends AppCompatActivity
                     balance.calculateBalance(5);
                     break;
                 case R.id.btPurchases:
-                    setContentView(R.layout.qr_screen);
+                    setContentView(R.layout.purchases);
+                    updateContexts();
+                case R.id.btBackPurchases:
+                    setContentView(R.layout.activity_main);
                     updateContexts();
             }
         }

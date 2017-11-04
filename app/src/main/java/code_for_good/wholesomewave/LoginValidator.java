@@ -1,9 +1,14 @@
 package code_for_good.wholesomewave;
 
 
-public class LoginValidator implements Validator{
+import android.content.Context;
 
-    public LoginValidator(){
+public class LoginValidator implements Validator{
+    LoginDBConnector loginDBConnector;
+    private String DBusername;
+    private String DBpassword;
+
+    public LoginValidator(Context context){
 
     }
 
@@ -11,6 +16,15 @@ public class LoginValidator implements Validator{
 
         //temporarily returns true
         return true;
+
+    }
+
+    private boolean checkCredentials(){
+
+        return true; //temp
+    }
+
+    private void getDataBaseInfo(){
 
     }
 }

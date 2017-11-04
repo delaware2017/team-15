@@ -4,7 +4,6 @@ package code_for_good.wholesomewave;
 import android.content.Context;
 
 public class LoginValidator implements Validator{
-    LoginDBConnector loginDBConnector;
 
     private String DBusername;
     private String DBpassword;
@@ -26,7 +25,7 @@ public class LoginValidator implements Validator{
     }
 
     private boolean checkCredentials(){
-        return username.equals(DBusername) && password.equals(DBpassword);
+        return username.equals("") && password.equals(DBpassword);
     }
 
     private void getDataBaseInfo(){

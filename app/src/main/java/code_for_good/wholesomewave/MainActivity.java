@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity
     protected void changeMenu(View button){
         try
         {
-            updateContexts();
             switch (button.getId())
             {
                 case R.id.title_button:
@@ -48,26 +47,22 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case R.id.event_menu_button:
                     setContentView(R.layout.event_menu);
-                    updateContexts();
                     break;
                 case R.id.earning_credit_info:
                     setContentView(R.layout.qr_screen);
-                    updateContexts();
                     break;
                 case R.id.btBack:
                     setContentView(R.layout.activity_main);
                     updateContexts();
-
                     Balance balance = new Balance(context, activity);
-                    balance.calculateBalance(5);
+                    balance.calculateBalance(-5);
                     break;
                 case R.id.btPurchases:
                     setContentView(R.layout.purchases);
-                    updateContexts();
                 case R.id.btBackPurchases:
                     setContentView(R.layout.activity_main);
-                    updateContexts();
             }
+            updateContexts();
         }
         catch (Exception e)
         {

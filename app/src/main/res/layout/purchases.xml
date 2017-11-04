@@ -36,6 +36,8 @@
         app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
+        android:background="@drawable/button"
+        android:onClick="changeMenu"
         android:id="@+id/btBackPurchases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

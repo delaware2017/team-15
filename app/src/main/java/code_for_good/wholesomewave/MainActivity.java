@@ -64,15 +64,29 @@ public class MainActivity extends AppCompatActivity
                     setContentView(R.layout.activity_main);
                     updateContexts();
 
+                    // create a new Balance object
                     Balance balance = new Balance(context, activity);
-                    balance.calculateBalance(5);
+                    balance.calculateBalance(-5);
+
+                    // create a NumberFormat object with standard currency formatting
+                    NumberFormat currency = NumberFormat.getCurrencyInstance();
+                    currency.setMinimumFractionDigits(2);
+                    currency.setMaximumFractionDigits(2);
+
+                    tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
+
+                    String newText = getString(R.string.balance) + "" + currency.format(balance.getBalance());
+                    tvMainMenuBalance.setText(newText);
                     break;
                 case R.id.btPurchases:
                     setContentView(R.layout.purchases);
                     updateContexts();
+                    break;
                 case R.id.btBackPurchases:
                     setContentView(R.layout.activity_main);
                     updateContexts();
+                    break;
+
             }
         }
         catch (Exception e)

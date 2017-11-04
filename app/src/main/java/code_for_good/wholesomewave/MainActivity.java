@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity
                 case R.id.title_button:
                     setContentView(R.layout.user_login);
                     updateContexts();
+                    loginMenu = new LoginMenu(context, activity);
                     break;
                 // when the account info button is pressed, switch to the account info page
                 case R.id.to_account_info_button:

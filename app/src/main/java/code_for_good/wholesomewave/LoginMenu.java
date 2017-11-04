@@ -5,6 +5,9 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.text.NumberFormat;
 
 /**
  * Author: Connor Price & Kevin Bradshaw
@@ -17,6 +20,9 @@ public class LoginMenu extends MenuData
     private EditText username;
     private EditText password;
     private Button verify;
+    TextView mainMenuBalance;
+    Balance balance;
+    String balanceString;
 
     // constructor that accepts a context and activity
     public LoginMenu(Context context, Activity activity) {
@@ -30,6 +36,7 @@ public class LoginMenu extends MenuData
             @Override
             public void onClick(View v) {
                 // collect and set user data
+                System.out.println("Debug");
                 collectUserData();
                 setUserData();
                 validateUserCredentials();
@@ -41,8 +48,10 @@ public class LoginMenu extends MenuData
     private void validateUserCredentials()
         {
             valid = new LoginValidator(context, super.username, super.password);
-            if (valid.isTrue())
+            if (valid.isTrue()) {
                 activity.setContentView(R.layout.activity_main);
+                updateMainMenuBalance();
+            }
             else
                 theToasting("Incorrect login credentials");
         }
@@ -65,5 +74,20 @@ public class LoginMenu extends MenuData
     private String getStringFromEditText(EditText editText)
     {
         return editText.getText().toString();
+    }
+
+    protected void updateMainMenuBalance(){
+        mainMenuBalance = (TextView) activity.findViewById(R.id.tv_balance_main_menu);
+        balance = new Balance(context, activity);
+        balanceString = formatAsCurrency(balance.getBalance());
+        mainMenuBalance.setText(balanceString);
+    }
+    private String formatAsCurrency(double number){
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        currency.setMaximumFractionDigits(2);
+        currency.setMinimumIntegerDigits(2);
+
+        return currency.format(number);
+
     }
 }

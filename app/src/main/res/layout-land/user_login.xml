@@ -10,7 +10,6 @@
 
     <Button
         android:background="@drawable/button"
-        android:onClick="verifyLogin"
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

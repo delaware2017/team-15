@@ -18,6 +18,7 @@ public class Balance extends MenuData
     public static double balance = 30;
 
 
+
     // constructor that accepts a context and activity
     public Balance(Context context, Activity activity)
     {

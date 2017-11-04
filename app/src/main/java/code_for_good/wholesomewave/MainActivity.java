@@ -61,6 +61,13 @@ public class MainActivity extends AppCompatActivity
                     setContentView(R.layout.qr_screen);
                     updateContexts();
                     break;
+                case R.id.btBack:
+                    setContentView(R.layout.activity_main);
+                    updateContexts();
+
+                    Balance balance = new Balance(context, activity);
+                    balance.calculateBalance(-5);
+                    break;
             }
         }
         catch (Exception e)

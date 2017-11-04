@@ -36,7 +36,7 @@ public class Balance extends MenuData
 
         // show a toast message that displays the change to the patient's balance
         if (amount < 0)
-            toast(currency.format(amount) + " has been deducted from your account!");
+            toast(currency.format(Math.abs(amount)) + " has been deducted from your account!");
         else
             toast(currency.format(amount) + " has been added to your account!");
     }

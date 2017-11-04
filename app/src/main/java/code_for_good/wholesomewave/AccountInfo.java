@@ -2,10 +2,13 @@ package code_for_good.wholesomewave;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
 
 import android.widget.TextView;
 
 import android.support.v7.widget.Toolbar;
+
+import java.text.NumberFormat;
 
 import org.w3c.dom.Text;
 
@@ -32,14 +35,36 @@ public class AccountInfo extends MenuData
         balance = 0;
     }
 
+    // method is triggered by clicking on the updateBalanceButton
+    protected void updateButtonEvent(View button)
+    {
+        // update the balance with a test value
+        updateBalance(3);
+    }
+
     // method updates the patient's balance
     public void updateBalance(double amount)
     {
+        // create a NumberFormat object with standard currency formatting
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        currency.setMinimumFractionDigits(2);
+        currency.setMaximumFractionDigits(2);
+
         // add the passed amount (even negative) to the account balance
         balance += amount;
 
         // update the balanceText TextView to display the updated balance
-        String newText = R.string.balance + balance + "";
-        balanceText.setText(newText);
+        // negative values are displayed along with a minus sign
+        String newText;
+
+        /*
+        if (balance >= 0)
+            newText = R.string.balance + "$" + balance;
+        else
+            newText = R.string.balance + "-$" + balance;
+        */
+
+        newText = R.string.balance + "" + balance;
+        balanceText.setText(currency.format(newText));
     }
 }

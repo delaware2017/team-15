@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 public class AccountInfo extends MenuData
 {
     // instance variable for the patient's balance
-    private static double balance;
+    private static double balance = 0;
 
     // instantiate TextView objects
     private TextView accountNumber;
@@ -30,9 +30,7 @@ public class AccountInfo extends MenuData
         Toolbar toolbar = new Toolbar(activity);
         toolbar.setTitle("My Account");
 
-        // set balance to zero
-        //FUTURE GET FROM DB
-        balance = 0;
+        //FUTURE GET BALANCE FROM DB
     }
 
     // initializes Android widgets

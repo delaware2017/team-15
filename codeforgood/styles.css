@@ -1,0 +1,44 @@
+/*
+styles
+*/
+h1  {
+    background-color: blue;
+	color: white;
+	font-size: 4.0em;
+	line-height: 1.6em;
+	font-weight: 1000;
+	text-align:center;
+	}
+	
+nav.sitenavigation {
+   padding: 1%;
+   text-align: center;  
+   background-color: lightblue;
+}
+
+nav.sitenavigation p {
+   margin: 0 1em;
+   display: inline-block;
+}
+
+nav.sitenavigation a:link {
+   color: white;
+   font-size: 3.0em;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+nav.sitenavigation a:visited {
+   color: red;
+}
+
+nav.sitenavigation a:hover, nav.sitenavigation a:focus {
+   text-shadow: 0 0 8px #082008;
+}
+	
+article p {
+       text-align: center;
+	   
+	   font-size: 1.2em;
+	   
+	  }

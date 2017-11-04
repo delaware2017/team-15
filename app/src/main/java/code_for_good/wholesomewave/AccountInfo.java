@@ -36,6 +36,7 @@ public class AccountInfo extends MenuData
     // method updates the patient's balance
     public void updateBalance(double amount)
     {
+
         // create a NumberFormat object with standard currency formatting
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         currency.setMinimumFractionDigits(2);

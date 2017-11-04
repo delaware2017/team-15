@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity
         currency.setMinimumFractionDigits(2);
         currency.setMaximumFractionDigits(2);
 
-        Balance balance = new Balance();
-        balance.calculateBalance(125.73);
+        Balance balance = new Balance(context, activity);
+        balance.calculateBalance(5.89);
 
         tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
 

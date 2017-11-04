@@ -13,7 +13,4 @@ public class DataBaseConnector {
     public static final String URL = "jdbc:mysql://localhost:3306/testing"; //Re-edit when server is complete
     public static final String USERNAME = "testUserName";
     public static final String PASSWORD = "askldfj";
-
-
-
 }

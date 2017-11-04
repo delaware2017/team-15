@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.title_screen);
 
         updateContexts();
     }
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         } catch (Exception e){
-            System.out.println(e.getStackTrace() + "\n" + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
     protected void verifyLogin(View button) {
@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
             updateContexts();
             switch (button.getId()) {
+                case R.id.title_button:
+                    setContentView(R.layout.activity_main);
+                    break;
                 case R.id.to_account_info_button:
                     setContentView(R.layout.account_info);
                     updateContexts();

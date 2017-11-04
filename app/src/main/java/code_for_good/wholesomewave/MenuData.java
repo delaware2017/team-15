@@ -8,6 +8,8 @@ public class MenuData {
     public Activity activity;
     public Context context;
     public Validator valid;
+    public String username;
+    public String password;
 
     public void theToasting(String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

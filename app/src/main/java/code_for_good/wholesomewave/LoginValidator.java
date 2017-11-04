@@ -5,14 +5,20 @@ import android.content.Context;
 
 public class LoginValidator implements Validator{
     LoginDBConnector loginDBConnector;
+
     private String DBusername;
     private String DBpassword;
+    private String username;
+    private String password;
 
-    public LoginValidator(Context context){
-
+    public LoginValidator(Context context, String username, String password) {
+        this.username = username;
+        this.password = password;
+        getDataBaseInfo();
     }
 
     public boolean isTrue() {
+        checkCredentials();
 
         //temporarily returns true
         return true;
@@ -20,8 +26,7 @@ public class LoginValidator implements Validator{
     }
 
     private boolean checkCredentials(){
-
-        return true; //temp
+        return username.equals(DBusername) && password.equals(DBpassword);
     }
 
     private void getDataBaseInfo(){

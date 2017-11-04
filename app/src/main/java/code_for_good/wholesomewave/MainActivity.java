@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity
 {
     Context context;
     Activity activity;
-    Validator valid;
     LoginMenu loginMenu;
     AccountInfo accountInfo;
 

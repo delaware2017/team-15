@@ -51,7 +51,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/login_welcome"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textColor="@color/primaryText" />
         </TableRow>
 
         <TableRow
@@ -64,7 +65,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:text="@string/login_username"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textColor="@color/primaryText" />
 
             <EditText
                 android:id="@+id/et_login_username"
@@ -85,7 +87,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:text="@string/login_password"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textColor="@color/primaryText" />
 
             <EditText
                 android:id="@+id/et_login_password"

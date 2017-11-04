@@ -3,6 +3,8 @@ package code_for_good.wholesomewave;
 import android.app.Activity;
 import android.content.Context;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import android.support.v7.widget.Toolbar;
@@ -15,14 +17,16 @@ public class AccountInfo extends MenuData
     private static double balance;
 
     // instantiate TextView objects
-    private TextView accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
-    private TextView accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
-    private TextView balanceText = (TextView)activity.findViewById(R.id.tv_account_balance);
+    private TextView accountNumber;
+    private TextView accountHolder;
+    private TextView balanceText;
+    private Button updateBalance;
 
     public AccountInfo(Context context, Activity activity)
     {
         this.context = context;
         this.activity = activity;
+        setupData();
 
         // create a new Toolbar and set the title
         Toolbar toolbar = new Toolbar(activity);
@@ -31,10 +35,25 @@ public class AccountInfo extends MenuData
         // set balance to zero
         //FUTURE GET FROM DB
         balance = 0;
+
+        updateBalance.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                System.out.println("Button clicked!");
+                calculateAndDisplayBalance(3.0);
+            }
+        });
     }
 
+    private void setupData(){
+        accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
+        accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
+        balanceText = (TextView)activity.findViewById(R.id.tv_account_balance);
+        updateBalance = (Button) activity.findViewById(R.id.btUpdateBalance);
+    }
+
+
     // method updates the patient's balance
-    public void updateBalance(double amount)
+    public void calculateAndDisplayBalance(double amount)
     {
         // create a NumberFormat object with standard currency formatting
         NumberFormat currency = NumberFormat.getCurrencyInstance();
@@ -55,6 +74,7 @@ public class AccountInfo extends MenuData
             newText = R.string.balance + "-$" + balance;
         */
 
+        System.out.println("Balance:" + balance);
         newText = String.valueOf(currency.format(balance));
         balanceText.setText(newText);
     }

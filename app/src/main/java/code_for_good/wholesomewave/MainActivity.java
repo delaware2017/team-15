@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btUpdateBalance:
                     // update the balance with a test value
                     accountInfo = new AccountInfo(context, activity);
-                    accountInfo.updateBalance(3);
+                    accountInfo.calculateAndDisplayBalance(3);
                     break;
             }
         } catch (Exception e){
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     protected void changeMenu(View button){
         try {
 
+            updateContexts();
             switch (button.getId()) {
                 case R.id.to_account_info_button:
                     setContentView(R.layout.account_info);

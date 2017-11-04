@@ -1,17 +1,13 @@
 package code_for_good.wholesomewave;
 
-import java.text.NumberFormat;
-
 public class Balance
 {
-    private static double balance;
-
+    private static double balance = 0;
     public Balance()
     {
-        balance = 0;
+
     }
 
-    // get method for balance
     public double getBalance()
     {
         return balance;
@@ -20,11 +16,6 @@ public class Balance
     // method updates the patient's balance
     public void calculateBalance(double amount)
     {
-        // create a NumberFormat object with standard currency formatting
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        currency.setMinimumFractionDigits(2);
-        currency.setMaximumFractionDigits(2);
-
         // add the passed amount (even negative) to the account balance
         balance += amount;
 

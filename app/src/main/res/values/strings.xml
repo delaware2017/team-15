@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Wholesome Wave</string>
+    <string name="login_welcome">Please input your\n credentials below:</string>
+    <string name="login_username">Username:</string>
+    <string name="login_password">Password:</string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
 </resources>

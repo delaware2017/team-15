@@ -10,6 +10,8 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     Context context;
     Activity activity;
+    LoginMenu loginMenu;
+    AccountInfo accountInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,17 @@ public class MainActivity extends AppCompatActivity {
         activity = MainActivity.this;
     }
 
+
+    protected void testButton(View button) {
+        switch (button.getId()){
+
+        }
+    }
     protected void verifyLogin(View button) {
+
+        updateContexts();
+        loginMenu = new LoginMenu(context, activity);
+
 
     }
 }

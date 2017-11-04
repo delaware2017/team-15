@@ -27,6 +27,7 @@
 
             <Button
                 android:id="@+id/update_balance"
+                android:onClick="updateBalance"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:text="@string/update_balance" />

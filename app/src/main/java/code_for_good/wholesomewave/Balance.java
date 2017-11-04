@@ -1,16 +1,20 @@
 package code_for_good.wholesomewave;
 
-import android.app.Activity;
-import android.content.Context;
-
 import java.text.NumberFormat;
 
 public class Balance
 {
     private static double balance;
-    public Balance(Context context, Activity activity)
+
+    public Balance()
     {
         balance = 0;
+    }
+
+    // get method for balance
+    public double getBalance()
+    {
+        return balance;
     }
 
     // method updates the patient's balance

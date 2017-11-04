@@ -17,7 +17,6 @@ public class AccountInfo extends MenuData
     private TextView accountNumber;
     private TextView accountHolder;
     private TextView balanceText;
-    private Button updateBalance;
     private Button mainMenuButton;
 
     public AccountInfo(Context context, Activity activity)

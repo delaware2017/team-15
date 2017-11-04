@@ -57,7 +57,7 @@ public class AccountInfo extends MenuData
             newText = R.string.balance + "-$" + balance;
         */
 
-        newText = R.string.balance + "" + balance;
-        balanceText.setText(currency.format(newText));
+        newText = R.string.balance + "" + currency.format(balance);
+        balanceText.setText(newText);
     }
 }

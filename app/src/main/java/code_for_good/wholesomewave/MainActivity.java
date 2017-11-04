@@ -5,9 +5,11 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     Context context;
     Activity activity;
     Validator valid;
@@ -15,52 +17,32 @@ public class MainActivity extends AppCompatActivity {
     AccountInfo accountInfo;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.title_screen);
 
         updateContexts();
     }
 
-    private void updateContexts(){
+    private void updateContexts()
+    {
         context = getApplicationContext();
         activity = MainActivity.this;
     }
 
-
-    protected void testButton(View button) {
-        /*switch (button.getId()){
-
-        }*/
-    }
-
-    protected void accountButtonsEvents(View button)
-    {
-        updateContexts();
-        try {
-            switch (button.getId()) {
-                case R.id.btUpdateBalance:
-                    // update the balance with a test value
-                    accountInfo = new AccountInfo(context, activity);
-                    accountInfo.calculateAndDisplayBalance(3);
-                    break;
-            }
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
     protected void verifyLogin(View button) {
-
         /*valid = new LoginValidator();
         if (valid.isTrue()) {
             setContentView()
         }*/
     }
     protected void changeMenu(View button){
-        try {
-
+        try
+        {
             updateContexts();
-            switch (button.getId()) {
+            switch (button.getId())
+            {
                 case R.id.title_button:
                     setContentView(R.layout.activity_main);
                     break;
@@ -75,14 +57,27 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.to_redemption_menu:
                     break;
-
             }
-
-        }catch (Exception e){
+        }
+        catch (Exception e)
+        {
             System.out.println(e.getMessage());
         }
     }
-    protected void toMainMenu(View button) {
+
+    protected void updateBalance()
+    {
+        Balance balance = new Balance();
+        balance.calculateBalance(125.73);
+
+        TextView tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
+
+        String newText = R.string.balance + "" + balance.getBalance();
+        tvMainMenuBalance.setText(newText);
+    }
+
+    protected void toMainMenu(View button)
+    {
         updateContexts();
         setContentView(R.layout.activity_main);
     }

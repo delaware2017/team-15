@@ -16,24 +16,25 @@ public class LoginMenu extends MenuData{
         this.context = context;
         this.activity = activity;
 
-        collectUserData();
-        setUserData();
-
         verify = (Button) activity.findViewById(R.id.login_button);
-
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                collectUserData();
+                setUserData();
                 validateUserCredentials();
             }
         });
     }
 
+
     private void validateUserCredentials() {
         valid = new LoginValidator(context, super.username, super.password);
-        if (valid.isTrue()) {
+        if (valid.isTrue())
             activity.setContentView(R.layout.activity_main);
-        }
+        else
+            theToasting("Incorrect login credentials");
+
     }
 
     private void collectUserData(){

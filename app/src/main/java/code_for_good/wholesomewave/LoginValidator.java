@@ -17,17 +17,15 @@ public class LoginValidator implements Validator{
     }
 
     public boolean isTrue() {
-        checkCredentials();
-
-        //temporarily returns true
-        return true;
+        return checkCredentials();
 
     }
 
     private boolean checkCredentials(){
-        return username.equals("") && password.equals(DBpassword);
+        return username.equals("admin") && password.equals("password");
     }
 
+    //When database is implemented
     private void getDataBaseInfo(){
 
     }

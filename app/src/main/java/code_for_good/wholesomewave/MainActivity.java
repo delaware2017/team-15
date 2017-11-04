@@ -5,24 +5,27 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
-
-import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity
 {
     Context context;
     Activity activity;
-    LoginMenu loginMenu;
     AccountInfo accountInfo;
-    TextView tvMainMenuBalance;
+    LoginMenu loginMenu;
+    Button titleButton;
+    TextView titleMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.title_screen);
-
+        animateTitleScreen();
         updateContexts();
     }
 
@@ -32,13 +35,27 @@ public class MainActivity extends AppCompatActivity
         activity = MainActivity.this;
     }
 
+    private void animateTitleScreen(){
+        titleButton = (Button) findViewById(R.id.title_button);
+        titleMessage = (TextView) findViewById(R.id.title_message);
+
+        Animation infiniteFade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.infinite_fade);
+        titleButton.startAnimation(infiniteFade);
+
+        AlphaAnimation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setDuration(3000);
+        titleMessage.startAnimation(fadeIn);
+    }
+
     protected void changeMenu(View button){
         try
         {
             switch (button.getId())
             {
                 case R.id.title_button:
-                    setContentView(R.layout.activity_main);
+                    setContentView(R.layout.user_login);
+                    updateContexts();
+                    loginMenu = new LoginMenu(context, activity);
                     break;
                 case R.id.to_account_info_button:
                     setContentView(R.layout.account_info);
@@ -70,22 +87,6 @@ public class MainActivity extends AppCompatActivity
         {
             System.out.println(e.getMessage());
         }
-    }
-
-    protected void updateBalance(View v)
-    {
-        // create a NumberFormat object with standard currency formatting
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        currency.setMinimumFractionDigits(2);
-        currency.setMaximumFractionDigits(2);
-
-        Balance balance = new Balance(context, activity);
-        balance.calculateBalance(5.89);
-
-        tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
-
-        String newText = getString(R.string.balance) + "" + currency.format(balance.getBalance());
-        tvMainMenuBalance.setText(newText);
     }
 
     protected void toMainMenu(View button)

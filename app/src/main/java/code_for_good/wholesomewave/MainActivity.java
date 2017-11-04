@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         }*/
     }
 
-    // method is triggered by clicking on the updateBalanceButton
     protected void accountButtonsEvents(View button)
     {
         updateContexts();

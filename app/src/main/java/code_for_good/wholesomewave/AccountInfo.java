@@ -21,6 +21,7 @@ public class AccountInfo extends MenuData
     private TextView accountHolder;
     private TextView balanceText;
     private Button updateBalance;
+    private Button mainMenu;
 
     public AccountInfo(Context context, Activity activity)
     {
@@ -44,11 +45,14 @@ public class AccountInfo extends MenuData
         });
     }
 
-    private void setupData(){
+    // initializes Android widgets
+    private void setupData()
+    {
         accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
         accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
-        balanceText = (TextView)activity.findViewById(R.id.tv_account_balance);
+        balanceText = (TextView)activity.findViewById(R.id.tvBalance);
         updateBalance = (Button) activity.findViewById(R.id.btUpdateBalance);
+        mainMenu = (Button)activity.findViewById(R.id.btMainMenu);
     }
 
 
@@ -65,7 +69,6 @@ public class AccountInfo extends MenuData
 
         // update the balanceText TextView to display the updated balance
         // negative values are displayed along with a minus sign
-        String newText;
 
         /*
         if (balance >= 0)
@@ -74,7 +77,7 @@ public class AccountInfo extends MenuData
             newText = R.string.balance + "-$" + balance;
         */
 
-        newText = String.valueOf(currency.format(balance));
+        String newText = activity.getString(R.string.balance) + " " + currency.format(balance);
         balanceText.setText(newText);
     }
 }

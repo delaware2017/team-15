@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity
     LoginMenu loginMenu;
     Button titleButton;
     TextView titleMessage;
+    TextView tvMainMenuBalance;
+    Balance balance;
 
     // onCreate
     @Override
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity
 
         animateTitleScreen();
         updateContexts();
+
+        balance = new Balance(context, activity);
     }
 
     // updates the context and activity for switching views
@@ -65,11 +69,10 @@ public class MainActivity extends AppCompatActivity
 
             switch (button.getId())
             {
-                // when the title button ("Continue") is pressed, switch to the main activity
+                // when the title button ("Continue") is pressed, switch to the login screen
                 case R.id.title_button:
                     setContentView(R.layout.user_login);
                     updateContexts();
-                    loginMenu = new LoginMenu(context, activity);
                     break;
                 // when the account info button is pressed, switch to the account info page
                 case R.id.to_account_info_button:

@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primaryGreen"
+    android:textColor="@color/primaryText">
 
     <ImageView
         android:id="@+id/imageView"
@@ -18,7 +20,8 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btBack"
+        android:background="@drawable/button"
         android:onClick="toMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +31,23 @@
         android:layout_marginTop="8dp"
         android:text="@string/back_button_text"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64" />
+
+    <TextView
+        android:id="@+id/tvInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Scan this code at the register!"
+        android:textSize="24sp"
+        android:textColor="@color/primaryText"
+        app:layout_constraintBottom_toTopOf="@+id/btBack"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

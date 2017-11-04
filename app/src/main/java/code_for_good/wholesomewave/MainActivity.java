@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 
 public class MainActivity extends AppCompatActivity
 {
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity
     Validator valid;
     LoginMenu loginMenu;
     AccountInfo accountInfo;
+    TextView tvMainMenuBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -65,14 +68,19 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    protected void updateBalance()
+    protected void updateBalance(View v)
     {
+        // create a NumberFormat object with standard currency formatting
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        currency.setMinimumFractionDigits(2);
+        currency.setMaximumFractionDigits(2);
+
         Balance balance = new Balance();
         balance.calculateBalance(125.73);
 
-        TextView tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
+        tvMainMenuBalance = (TextView)findViewById(R.id.tv_main_menu_balance);
 
-        String newText = R.string.balance + "" + balance.getBalance();
+        String newText = getString(R.string.balance) + "" + currency.format(balance.getBalance());
         tvMainMenuBalance.setText(newText);
     }
 

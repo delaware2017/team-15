@@ -2,8 +2,10 @@ package code_for_good.wholesomewave;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
 
 import android.widget.TextView;
+import android.widget.Button;
 
 import android.support.v7.widget.Toolbar;
 
@@ -32,6 +34,11 @@ public class AccountInfo extends MenuData
         balance = 0;
     }
 
+    protected void updateButtonEvent(View button)
+    {
+        updateBalance(3);
+    }
+
     // method updates the patient's balance
     public void updateBalance(double amount)
     {
@@ -39,7 +46,11 @@ public class AccountInfo extends MenuData
         balance += amount;
 
         // update the balanceText TextView to display the updated balance
-        String newText = R.string.balance + balance + "";
+        String newText;
+        if (balance >= 0)
+            newText = R.string.balance + "$" + balance;
+        else
+            newText = R.string.balance + "-$" + balance;
         balanceText.setText(newText);
     }
 }

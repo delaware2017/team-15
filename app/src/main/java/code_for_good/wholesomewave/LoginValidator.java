@@ -25,7 +25,7 @@ public class LoginValidator implements Validator{
     }
 
     private boolean checkCredentials(){
-        return username.equals(DBusername) && password.equals(DBpassword);
+        return username.equals("") && password.equals(DBpassword);
     }
 
     private void getDataBaseInfo(){

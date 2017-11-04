@@ -23,30 +23,33 @@
 		 <h1>Wholesome Wave</h1>
 		 </header>
 		 <nav class="sitenavigation">
-			<p><a href="index.html">Home</a></P>
-			<p><a href="providers.html">Providers</a></p>
+			<p><a href="index.html">Home</a></p>
+			<p><a href="account.html">Account Information</a></p>
 		 </nav>
-         <h2>Account Information</h2>		 
+         <h2>Renew balance</h2>		 
 	     </div>
 	     <article>
 		
-	<dl>
-	
 		<?php
-		$account = $_POST["account_num"];
-	
-		$query = "select FIRST_NAME, BALANCE from patients where ACCOUNT_NUM = '$account'";
+		$account = $_POST["account"];
+		$term = $_POST["term"];
+		
+		$query = "select FAMILY_SIZE, BALANCE from patients where ACCOUNT_NUM = '$account'";
 		
 		$result = mysqli_query($db, $query) or die('Error querying database.');
 		$row = $result->fetch_assoc();
 		
-		echo $row["FIRST_NAME"] . ", you are logged in. <br>";
-	
-		echo "Your balance is $" . $row["BALANCE"];
+		$addBalance = ($row["FAMILY_SIZE"] * $term) + $row["BALANCE"];
+		echo $addBalance;
 		
-		?>  
+		$query = "update PATIENTS 
+				set BALANCE = '$addBalance'
+				where ACCOUNT_NUM = '$account'";
+		$result = mysqli_query($db, $query) or die('Error querying database.');
 		
-		<p>
-		Here is your scanner code for shopping.  You may scan it on your phone or print it to use.
-		<p>
-		<img src="qr_code.png">
+		if(!$result)
+			echo "Prescription NOT renewed!";
+		else
+			echo "Prescription renewed!";
+
+		?>

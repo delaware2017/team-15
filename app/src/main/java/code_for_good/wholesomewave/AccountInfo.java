@@ -38,7 +38,7 @@ public class AccountInfo extends MenuData
     {
         accountNumber = (TextView)activity.findViewById(R.id.tvAccountNumber);
         accountHolder = (TextView)activity.findViewById(R.id.tvAccountHolder);
-        balanceText = (TextView)activity.findViewById(R.id.tvBalance);
+        balanceText = (TextView)activity.findViewById(R.id.tv_account_info_balance);
         mainMenuButton = (Button)activity.findViewById(R.id.btMainMenu);
     }
 }

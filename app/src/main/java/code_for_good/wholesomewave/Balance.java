@@ -9,13 +9,17 @@ import android.widget.Toast;
 
 public class Balance extends MenuData
 {
+    // instance variable for the patient's balance
     private static double balance = 0;
+
+    // constructor that accepts a context and activity
     public Balance(Context context, Activity activity)
     {
         this.context = context;
         this.activity = activity;
     }
 
+    // getBalance method that returns the balance
     public double getBalance()
     {
         return balance;
@@ -43,6 +47,7 @@ public class Balance extends MenuData
         // ADD PURCHASE TO THE DATABASE
     }
 
+    // method that creates toast messages from the string passed to it
     public void toast(String message)
     {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();

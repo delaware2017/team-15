@@ -35,13 +35,6 @@ public class AccountInfo extends MenuData
         balance = 0;
     }
 
-    // method is triggered by clicking on the updateBalanceButton
-    protected void updateButtonEvent(View button)
-    {
-        // update the balance with a test value
-        updateBalance(3);
-    }
-
     // method updates the patient's balance
     public void updateBalance(double amount)
     {

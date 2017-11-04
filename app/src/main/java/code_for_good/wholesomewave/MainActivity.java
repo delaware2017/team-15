@@ -33,6 +33,19 @@ public class MainActivity extends AppCompatActivity {
 
         }*/
     }
+
+    // method is triggered by clicking on the updateBalanceButton
+    protected void updateButtonEvent(View button)
+    {
+        switch(button.getId())
+        {
+            case R.id.btUpdateBalance:
+                // update the balance with a test value
+                AccountInfo accountInfo = new AccountInfo(context, activity);
+                accountInfo.updateBalance(3);
+                break;
+        }
+    }
     protected void verifyLogin(View button) {
 
         /*valid = new LoginValidator();
